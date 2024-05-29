@@ -1,4 +1,4 @@
-function groupLevelResults = runAllGroupAnalyses(groupLevelERPs, resultsSavePath)
+function groupLevelResults = runGroupAnalyses(groupLevelERPs, resultsSavePath)
 
 groupLevelResults = struct();
 groupLevelResults.info = groupLevelERPs.info;
