@@ -1,6 +1,6 @@
-function acrossSubjectsERPs = generateGrandAvgs(acrossSubjectsDataset, channel)
+function acrossSubjectsERPs = generateGrandAvgs(allSubjectsERPs, channel)
 
-info = acrossSubjectsDataset.info;
+info = allSubjectsERPs.info;
 blocks = info.blocks;
 numBlocks = length(blocks);
 conditions = info.conditions;
@@ -24,7 +24,7 @@ for iBlock = 1:numBlocks
             morphPlotLabel = sprintf(['morphs ', sprintf('%s', num2str(morphs, '%d, '))]);
             morphPlotLabel(end) = [];
 
-            ERPs = acrossSubjectsDataset.(blockField).(conditionField).(morphField);
+            ERPs = allSubjectsERPs.(blockField).(conditionField).(morphField);
 
             % Exclude data fields missing ERPs.
             if any(cellfun(@isempty, ERPs))
